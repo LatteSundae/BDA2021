@@ -1,14 +1,16 @@
 echo ${YEAR:=2021}
 
 #download data from the data source
-gsutil -m cp -r gs://bda12021/bts/$YEAR/*zip . 
+gsutil -m cp -r gs://bda12021/bts/$YEAR/*csv . 
 
+#There is no need to unzip these file as it is already in csv file
 #unzip zip file to csv file with respective name
-for month in `seq -w 1 12`; do 
-   unzip $YEAR$month.zip
-   mv *ONTIME.csv $YEAR$month.csv
-   rm $YEAR$month.zip
-done
+#for month in `seq -w 1 12`; do 
+#   unzip $YEAR$month.zip
+#   mv *ONTIME.csv $YEAR$month.csv
+#   rm $YEAR$month.zip
+#done
+
 
 #removing the quotation mark from csv file
 for month in `seq -w 1 12`; do
