@@ -18,7 +18,10 @@ for month in `seq -w 1 12`; do
 done
 
 #uploading all csv file to the bucket
-gsutil -m cp -r ./$YEAR*csv gs://bda2021_pj1
+gsutil -m cp -r ./$YEAR*csv gs://bda2021_pj1/bts
 
 #remove the zip file
 rm $YEAR*csv
+
+#Displaying complete message
+echo Script2018 Completed
