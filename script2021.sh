@@ -1,7 +1,7 @@
 echo ${YEAR:=2021}
 
 #download data from the data source
-gsutil -m cp -r gs://bda12021/bts/$YEAR/$YEAR*zip . 
+gsutil -m cp -r gs://bda12021/bts/$YEAR/*zip . 
 
 #unzip zip file to csv file with respective name
 for month in `seq -w 1 12`; do 
